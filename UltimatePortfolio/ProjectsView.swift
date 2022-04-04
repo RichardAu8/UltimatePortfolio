@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ProjectsView: View {
+    static let openTag: String = "Open"
+    static let closedTag: String = "Closed"
+    
     let showClosedProjects: Bool
     //NOTE: use @FetchRequest instead of Paul's code below
     // his excuse of not knowing whether to fetch open or closed project is lame.  Just fetch the open ones by default
@@ -25,9 +28,9 @@ struct ProjectsView: View {
         NavigationView {
             List {
                 ForEach(projects.wrappedValue) { project in
-                    Section(header: Text(project.title ?? "")) {
-                        ForEach(project.items?.allObjects as? [Item] ?? []) {item in
-                            Text(item.title ?? "")
+                    Section(header: Text(project.projectTitle)) {
+                        ForEach(project.projectItems) {item in
+                            Text(item.itemTitle)
                         }
                     }
                     

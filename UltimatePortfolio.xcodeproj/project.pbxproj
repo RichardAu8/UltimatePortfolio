@@ -16,6 +16,8 @@
 		6D9E943C27F54ED70044A5A0 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D9E943B27F54ED70044A5A0 /* CloudKit.framework */; };
 		6D9E943F27F553C20044A5A0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9E943E27F553C20044A5A0 /* HomeView.swift */; };
 		6D9E944127F554E90044A5A0 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9E944027F554E90044A5A0 /* ProjectsView.swift */; };
+		6D9E944327F582F90044A5A0 /* Item-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9E944227F582F90044A5A0 /* Item-CoreDataHelpers.swift */; };
+		6D9E944527F584D50044A5A0 /* Project-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9E944427F584D50044A5A0 /* Project-CoreDataHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		6D9E943D27F551B40044A5A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6D9E943E27F553C20044A5A0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		6D9E944027F554E90044A5A0 /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
+		6D9E944227F582F90044A5A0 /* Item-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item-CoreDataHelpers.swift"; sourceTree = "<group>"; };
+		6D9E944427F584D50044A5A0 /* Project-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project-CoreDataHelpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				6D9E943927F54ECB0044A5A0 /* UltimatePortfolio.entitlements */,
 				6D837E6C27F523BF0003C6C1 /* UltimatePortfolioApp.swift */,
 				6D837E6E27F523BF0003C6C1 /* ContentView.swift */,
+				6D9E944227F582F90044A5A0 /* Item-CoreDataHelpers.swift */,
+				6D9E944427F584D50044A5A0 /* Project-CoreDataHelpers.swift */,
 				6D9E943E27F553C20044A5A0 /* HomeView.swift */,
 				6D9E944027F554E90044A5A0 /* ProjectsView.swift */,
 				6D837E7A27F525140003C6C1 /* Main.xcdatamodeld */,
@@ -167,10 +173,12 @@
 			files = (
 				6D9E944127F554E90044A5A0 /* ProjectsView.swift in Sources */,
 				6D837E7C27F525140003C6C1 /* Main.xcdatamodeld in Sources */,
+				6D9E944527F584D50044A5A0 /* Project-CoreDataHelpers.swift in Sources */,
 				6D9E943827F52AE80044A5A0 /* DataController.swift in Sources */,
 				6D837E6F27F523BF0003C6C1 /* ContentView.swift in Sources */,
 				6D9E943F27F553C20044A5A0 /* HomeView.swift in Sources */,
 				6D837E6D27F523BF0003C6C1 /* UltimatePortfolioApp.swift in Sources */,
+				6D9E944327F582F90044A5A0 /* Item-CoreDataHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
