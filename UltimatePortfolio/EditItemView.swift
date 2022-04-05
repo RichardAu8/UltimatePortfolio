@@ -46,8 +46,12 @@ struct EditItemView: View {
             }
         }
         .navigationTitle("Edit Item")
-        .onDisappear(perform: update)
-
+        // Note: using clean native SwiftUI .onChange instead of Hudson's convoluted hack
+        .onChange(of: title) {_ in update() }
+        .onChange(of: detail) {_ in update() }
+        .onChange(of: priority) {_ in update() }
+        .onChange(of: completed) {_ in update() }
+        .onDisappear(perform: dataController.save)
     }
     
     func update() {

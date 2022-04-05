@@ -19,10 +19,19 @@ struct UltimatePortfolioApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, dataController.container.viewContext)
                 //managedObjectContext is the key for the view to find the CoreData context
-                .environmentObject(dataController)
+                .environment(\.managedObjectContext, dataController.container.viewContext)
                 //injecting the controller into the view
+                .environmentObject(dataController)
+                //listen to a notification (i.e., UIApplication.willResignActiveNotification) when user leaves the app
+                //save if the user leaves the app for any reason
+                .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification), perform: save)
         }
+    }
+    
+    // saves to core data
+    // needs a notification parameter because .onReceive above needs to pass the notification
+    func save(_ note: Notification) {
+        dataController.save()
     }
 }
