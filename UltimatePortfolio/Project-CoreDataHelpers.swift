@@ -44,6 +44,8 @@ extension Project {
         return Double(completedItems.count) / Double(originalItems.count)
     }
     
+    static let colors = ["Pink", "Purple", "Red", " Orange", "Gold", "Green", "Teal", "Light Blue", "Dark Blue", "Midnight", "Dark Gray", "Gray"]
+    
     static var example: Project {
         let controller = DataController(inMemory: true)
         let viewContext = controller.container.viewContext
