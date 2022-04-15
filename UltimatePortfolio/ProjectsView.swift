@@ -35,10 +35,13 @@ struct ProjectsView: View {
         // otherwise the view gets smaller everytime you navigate down the hierarchy
         NavigationView {
             Group {
+                // condition added for iPhone Max landscape
                 if projects.wrappedValue.count == 0 {
                     Text("There's nothing here right now.")
                         .foregroundColor(.secondary)
                 } else {
+                    // List will render within left pane in landscape mode on iPhone Max
+                    // Edit Next view in hierarchy
                     List {
                         ForEach(projects.wrappedValue) { project in
                             Section(header: ProjectHeaderView(project: project)) {
@@ -102,6 +105,7 @@ struct ProjectsView: View {
                     }
                 } // else
             } // Group
+            // condition added for iPhone Max landscape
             SelectSomethingView()
         } //NavigationView
     }
