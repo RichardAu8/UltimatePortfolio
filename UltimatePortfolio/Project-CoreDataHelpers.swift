@@ -8,7 +8,7 @@
 import Foundation
 
 extension Project {
-    var projectTitle: String {title ?? "New Project"}
+    var projectTitle: String {title ?? NSLocalizedString("New Project", comment: "Create a new project")}
     var projectDetail: String {detail ?? ""}
     var projectColor: String { color ?? "Light Blue"}
     
