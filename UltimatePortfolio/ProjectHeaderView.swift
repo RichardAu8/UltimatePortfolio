@@ -14,7 +14,7 @@ struct ProjectHeaderView: View {
         HStack {
             VStack(alignment: .leading) {
                 Text(project.projectTitle)
-                
+                    .font(.headline) // added by RA
                 ProgressView(value: project.completionAmount)
                     .accentColor(Color(project.projectColor))
             }
@@ -25,6 +25,7 @@ struct ProjectHeaderView: View {
                     .imageScale(.large)
             }
         }
+        .accessibilityElement(children: .combine)
         .padding(.bottom, 10)
 
     }
