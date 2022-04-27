@@ -40,80 +40,103 @@ struct ProjectsView: View {
                     Text("There's nothing here right now.")
                         .foregroundColor(.secondary)
                 } else {
-                    // List will render within left pane in landscape mode on iPhone Max
-                    // Edit Next view in hierarchy
-                    List {
-                        ForEach(projects.wrappedValue) { project in
-                            Section(header: ProjectHeaderView(project: project)) {
-                                ForEach(project.projectItems(using: sortOrder)) {item in
-                                    ItemRowView(project: project, item: item)
-                                }
-                                .onDelete { offsets in
-                                    let allItems = project.projectItems(using: sortOrder)
-                                    for offset in offsets {
-                                        let item = allItems[offset]
-                                        dataController.delete(item)
-                                    }
-                                    dataController.save()
-                                }
-                                if showClosedProjects == false {
-                                    Button {
-                                        withAnimation {
-                                            let item = Item(context: managedObjectContext)
-                                            item.project = project
-                                            item.creationDate = Date()
-                                            dataController.save()
-                                        }
-                                    } label: {
-                                        Label("Add New Item", systemImage: "plus")
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    .listStyle(InsetGroupedListStyle())
-                    .navigationTitle(showClosedProjects ? "Closed Projects" : "Open Projects")
-                    .toolbar {
-                        ToolbarItem(placement: .navigationBarTrailing) {
-                            if showClosedProjects == false {
-                                Button {
-                                    withAnimation {
-                                        let project = Project(context: managedObjectContext)
-                                        project.closed = false
-                                        project.creationDate = Date()
-                                        dataController.save()
-                                    }
-                                } label: {
-                                    if UIAccessibility.isVoiceOverRunning {
-                                        Text("Add Project")
-                                    } else {
-                                    Label("Add Project", systemImage: "plus")
-                                    }
-                                }
-                            }
-                        }
-                        ToolbarItem(placement: .navigationBarLeading) {
-                            Button {
-                                showingSortOrder.toggle()
-                            } label: {
-                                Label("Sort", systemImage: "arrow.up.arrow.down")
-                            }
-                        }
-                    }
-                    .actionSheet(isPresented: $showingSortOrder) {
-                        ActionSheet(title: Text("Sort Items"), message: nil, buttons: [
-                            .default(Text("Optimized")) {sortOrder = .optimized },
-                            .default(Text("Creation Date")) {sortOrder = .creationDate },
-                            .default(Text("Title")) {sortOrder = .title }
-                        ])
-                    }
+                    projectsList
                 } // else
             } // Group
             // condition added for iPhone Max landscape
             SelectSomethingView()
         } //NavigationView
+    } // Body
+    
+    var projectsList: some View {
+        // List will render within left pane in landscape mode on iPhone Max
+        // Edit Next view in hierarchy
+        List {
+            ForEach(projects.wrappedValue) { project in
+                Section(header: ProjectHeaderView(project: project)) {
+                    ForEach(project.projectItems(using: sortOrder)) {item in
+                        ItemRowView(project: project, item: item)
+                    }
+                    .onDelete { offsets in
+                        delete(offsets, from: project)
+                    }
+                    if showClosedProjects == false {
+                        Button {
+                            addItem(to: project)
+                        } label: {
+                            Label("Add New Item", systemImage: "plus")
+                        }
+                    }
+                }
+            }
+        }
+        .listStyle(InsetGroupedListStyle())
+        .navigationTitle(showClosedProjects ? "Closed Projects" : "Open Projects")
+        .toolbar {
+            addProjectToolbarItem
+            sortOrderToolbarItem
+        }
+        .actionSheet(isPresented: $showingSortOrder) {
+            ActionSheet(title: Text("Sort Items"), message: nil, buttons: [
+                .default(Text("Optimized")) {sortOrder = .optimized },
+                .default(Text("Creation Date")) {sortOrder = .creationDate },
+                .default(Text("Title")) {sortOrder = .title }
+            ])
+        }
     }
-}
+    
+    var addProjectToolbarItem: some ToolbarContent {
+        ToolbarItem(placement: .navigationBarTrailing) {
+            if showClosedProjects == false {
+                Button(action: addProject) {
+                    if UIAccessibility.isVoiceOverRunning {
+                        Text("Add Project")
+                    } else {
+                        Label("Add Project", systemImage: "plus")
+                    }
+                }
+            }
+        }
+    }
+    
+    var sortOrderToolbarItem: some ToolbarContent {
+        ToolbarItem(placement: .navigationBarLeading) {
+            Button {
+                showingSortOrder.toggle()
+            } label: {
+                Label("Sort", systemImage: "arrow.up.arrow.down")
+            }
+        }
+    }
+    
+    func addItem(to project: Project) {
+        withAnimation {
+            let item = Item(context: managedObjectContext)
+            item.project = project
+            item.creationDate = Date()
+            dataController.save()
+        }
+    }
+    
+    func delete(_ offsets: IndexSet, from project: Project) {
+        let allItems = project.projectItems(using: sortOrder)
+        for offset in offsets {
+            let item = allItems[offset]
+            dataController.delete(item)
+        }
+        dataController.save()
+    }
+    
+    func addProject() {
+        withAnimation {
+            let project = Project(context: managedObjectContext)
+            project.closed = false
+            project.creationDate = Date()
+            dataController.save()
+        }
+    }
+    
+} // ProjectsView
 
 struct ProjectsView_Previews: PreviewProvider {
     static var dataController  = DataController.preview

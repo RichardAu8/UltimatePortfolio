@@ -11,6 +11,8 @@
 		6D805A7628129C730060FE06 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D805A7828129C730060FE06 /* Localizable.strings */; };
 		6D805A7A2813806A0060FE06 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 6D805A7C2813806A0060FE06 /* Localizable.stringsdict */; };
 		6D805A7E281382D30060FE06 /* Awards.json in Resources */ = {isa = PBXBuildFile; fileRef = 6D805A80281382D30060FE06 /* Awards.json */; };
+		6D805A832818D68B0060FE06 /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D805A822818D68B0060FE06 /* ItemListView.swift */; };
+		6D805A852818D9D60060FE06 /* ProjectSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D805A842818D9D60060FE06 /* ProjectSummaryView.swift */; };
 		6D837E6D27F523BF0003C6C1 /* UltimatePortfolioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D837E6C27F523BF0003C6C1 /* UltimatePortfolioApp.swift */; };
 		6D837E6F27F523BF0003C6C1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D837E6E27F523BF0003C6C1 /* ContentView.swift */; };
 		6D837E7127F523C20003C6C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D837E7027F523C20003C6C1 /* Assets.xcassets */; };
@@ -41,6 +43,8 @@
 		6D805A7D2813806D0060FE06 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = hu; path = hu.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		6D805A7F281382D30060FE06 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = hu; path = hu.lproj/Awards.json; sourceTree = "<group>"; };
 		6D805A81281382EA0060FE06 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/Awards.json; sourceTree = "<group>"; };
+		6D805A822818D68B0060FE06 /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
+		6D805A842818D9D60060FE06 /* ProjectSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSummaryView.swift; sourceTree = "<group>"; };
 		6D837E6927F523BF0003C6C1 /* UltimatePortfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimatePortfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D837E6C27F523BF0003C6C1 /* UltimatePortfolioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimatePortfolioApp.swift; sourceTree = "<group>"; };
 		6D837E6E27F523BF0003C6C1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,11 +106,13 @@
 				6D9E943927F54ECB0044A5A0 /* UltimatePortfolio.entitlements */,
 				6D837E6C27F523BF0003C6C1 /* UltimatePortfolioApp.swift */,
 				6D837E6E27F523BF0003C6C1 /* ContentView.swift */,
+				6DEB02632807C7F200981BBC /* SelectSomethingView.swift */,
 				6D9E943E27F553C20044A5A0 /* HomeView.swift */,
 				6D9E944027F554E90044A5A0 /* ProjectsView.swift */,
-				6DEB02632807C7F200981BBC /* SelectSomethingView.swift */,
 				6DCC3BB927FBCF84000052D9 /* ProjectHeaderView.swift */,
 				6DCC3BBD27FC0F69000052D9 /* EditProjectView.swift */,
+				6D805A822818D68B0060FE06 /* ItemListView.swift */,
+				6D805A842818D9D60060FE06 /* ProjectSummaryView.swift */,
 				6DCC3BB727FABD62000052D9 /* ItemRowView.swift */,
 				6DCC3BB527FAA9A6000052D9 /* EditItemView.swift */,
 				6DEB0269280A616700981BBC /* AwardsView.swift */,
@@ -226,11 +232,13 @@
 				6DEB0266280A37E500981BBC /* Bundle-Decodable.swift in Sources */,
 				6D805A71280F8D840060FE06 /* Color-Additions.swift in Sources */,
 				6DCC3BBA27FBCF84000052D9 /* ProjectHeaderView.swift in Sources */,
+				6D805A852818D9D60060FE06 /* ProjectSummaryView.swift in Sources */,
 				6DCC3BB827FABD62000052D9 /* ItemRowView.swift in Sources */,
 				6DEB026A280A616700981BBC /* AwardsView.swift in Sources */,
 				6D837E6F27F523BF0003C6C1 /* ContentView.swift in Sources */,
 				6D9E943F27F553C20044A5A0 /* HomeView.swift in Sources */,
 				6DCC3BBE27FC0F69000052D9 /* EditProjectView.swift in Sources */,
+				6D805A832818D68B0060FE06 /* ItemListView.swift in Sources */,
 				6D837E6D27F523BF0003C6C1 /* UltimatePortfolioApp.swift in Sources */,
 				6D9E944327F582F90044A5A0 /* Item-CoreDataHelpers.swift in Sources */,
 				6DEB0268280A600400981BBC /* Award.swift in Sources */,
