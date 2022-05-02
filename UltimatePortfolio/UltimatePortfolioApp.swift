@@ -25,7 +25,10 @@ struct UltimatePortfolioApp: App {
                 .environmentObject(dataController)
                 //listen to a notification (i.e., UIApplication.willResignActiveNotification) when user leaves the app
                 //save if the user leaves the app for any reason
-                .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification), perform: save)
+                .onReceive(
+                    NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification),
+                    perform: save
+                )
         }
     }
     

@@ -8,11 +8,17 @@
 import Foundation
 
 extension Bundle {
+    // swiftlint:disable line_length
     
     // We're using generic placeholders for decodable.  Swift won't know the type until we use them
     // T will represent these placeholders
     
-    func decode<T: Decodable>(_ type: T.Type, from file: String, dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate, keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys) -> T {
+    func decode<T: Decodable>(
+        _ type: T.Type,
+        from file: String,
+        dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate,
+        keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys
+    ) -> T {
         
         guard let url = self.url(forResource: file, withExtension: nil) else {
             fatalError("Failed to locate \(file) in bundle.")
