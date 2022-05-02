@@ -4,6 +4,8 @@
 //
 //  Created by RICHARD AU on 31/3/2022.
 //
+/// An environment singleton responsible for managing the Core Data stack including,
+/// counting fetch requests, tracking awards and dealing with sample data
 
 import Foundation
 import SwiftUI
@@ -12,6 +14,11 @@ import CoreData
 class DataController: ObservableObject {
     let container: NSPersistentCloudKitContainer
     
+    /// Initialises a data controller either in permanent (app/cloud) storage or in memory when we only want to use it for testing
+    ///
+    /// Defaults to permanent storage
+    ///  - Parameter inMemory: indicates whether to store data temporarily in memory
+    // For testing & preview, create an in-memory database in /dev/null that is destroyed when the app finishes running
     init(inMemory: Bool = false){
         container = NSPersistentCloudKitContainer(name: "Main")
         
@@ -26,6 +33,8 @@ class DataController: ObservableObject {
         }
     }
     
+    /// Creates example projects and items to make manual testing easier
+    /// - Throws: an NSError sent from callsave() on the NSManagedObjectContext
     func createSampleData() throws {
         let viewContext = container.viewContext
         
@@ -87,17 +96,17 @@ class DataController: ObservableObject {
     
     func hasEarned(award: Award) -> Bool {
         switch award.criterion {
+        //returns true when user adds a certain number of items
         case "items" :
             let fetchRequest: NSFetchRequest<Item> = NSFetchRequest(entityName: "Item")
             let awardCount = count(for: fetchRequest)
             return awardCount >= award.value
-            
+        //returns true when user marks a certain number of items as completed
         case "complete":
             let fetchRequest: NSFetchRequest<Item> = NSFetchRequest(entityName: "Item")
             fetchRequest.predicate = NSPredicate(format: "completed = true")
             let awardCount = count(for: fetchRequest)
             return awardCount >= award.value
-            
         default:
             // fatalError("Unknown award criterion \(award.criterion).")
             return false

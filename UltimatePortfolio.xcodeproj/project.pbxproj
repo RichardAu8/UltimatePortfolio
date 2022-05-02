@@ -36,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6D567A92281FA915009573F7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6D805A70280F8D840060FE06 /* Color-Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Additions.swift"; sourceTree = "<group>"; };
 		6D805A7728129C730060FE06 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6D805A79281377C50060FE06 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -85,6 +86,7 @@
 		6D837E6027F523BF0003C6C1 = {
 			isa = PBXGroup;
 			children = (
+				6D567A92281FA915009573F7 /* README.md */,
 				6D837E6B27F523BF0003C6C1 /* UltimatePortfolio */,
 				6D837E6A27F523BF0003C6C1 /* Products */,
 				6D9E943A27F54ED70044A5A0 /* Frameworks */,

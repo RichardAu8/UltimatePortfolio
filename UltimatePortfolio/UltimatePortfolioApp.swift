@@ -24,6 +24,7 @@ struct UltimatePortfolioApp: App {
                 //injecting the controller into the view
                 .environmentObject(dataController)
                 //listen to a notification (i.e., UIApplication.willResignActiveNotification) when user leaves the app
+                // from foreground.  Didnt use .onChange(of: scenePhase) {...} so we can port the app to MacOS
                 //save if the user leaves the app for any reason
                 .onReceive(
                     NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification),
