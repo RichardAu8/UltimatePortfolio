@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6D567AA42821EA0E009573F7 /* Awards.json in Resources */ = {isa = PBXBuildFile; fileRef = 6D567AA32821EA0E009573F7 /* Awards.json */; };
+		6D567AAF2822197B009573F7 /* UltimatePortfolioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D567AAE2822197B009573F7 /* UltimatePortfolioTests.swift */; };
+		6D567AB628221C0D009573F7 /* AssetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D567AB528221C0D009573F7 /* AssetTests.swift */; };
 		6D805A71280F8D840060FE06 /* Color-Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D805A70280F8D840060FE06 /* Color-Additions.swift */; };
 		6D805A7628129C730060FE06 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D805A7828129C730060FE06 /* Localizable.strings */; };
 		6D805A7A2813806A0060FE06 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 6D805A7C2813806A0060FE06 /* Localizable.stringsdict */; };
@@ -36,9 +38,22 @@
 		6DEB026A280A616700981BBC /* AwardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEB0269280A616700981BBC /* AwardsView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		6D567AB02822197B009573F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D837E6127F523BF0003C6C1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D837E6827F523BF0003C6C1;
+			remoteInfo = UltimatePortfolio;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		6D567A92281FA915009573F7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6D567AA32821EA0E009573F7 /* Awards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Awards.json; sourceTree = "<group>"; };
+		6D567AAC2822197B009573F7 /* UltimatePortfolioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UltimatePortfolioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D567AAE2822197B009573F7 /* UltimatePortfolioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimatePortfolioTests.swift; sourceTree = "<group>"; };
+		6D567AB528221C0D009573F7 /* AssetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetTests.swift; sourceTree = "<group>"; };
 		6D805A70280F8D840060FE06 /* Color-Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Additions.swift"; sourceTree = "<group>"; };
 		6D805A7728129C730060FE06 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6D805A79281377C50060FE06 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -74,6 +89,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6D567AA92822197B009573F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6D837E6627F523BF0003C6C1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -159,11 +181,21 @@
 			path = Activities;
 			sourceTree = "<group>";
 		};
+		6D567AAD2822197B009573F7 /* UltimatePortfolioTests */ = {
+			isa = PBXGroup;
+			children = (
+				6D567AAE2822197B009573F7 /* UltimatePortfolioTests.swift */,
+				6D567AB528221C0D009573F7 /* AssetTests.swift */,
+			);
+			path = UltimatePortfolioTests;
+			sourceTree = "<group>";
+		};
 		6D837E6027F523BF0003C6C1 = {
 			isa = PBXGroup;
 			children = (
 				6D567A92281FA915009573F7 /* README.md */,
 				6D837E6B27F523BF0003C6C1 /* UltimatePortfolio */,
+				6D567AAD2822197B009573F7 /* UltimatePortfolioTests */,
 				6D837E6A27F523BF0003C6C1 /* Products */,
 				6D9E943A27F54ED70044A5A0 /* Frameworks */,
 			);
@@ -173,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				6D837E6927F523BF0003C6C1 /* UltimatePortfolio.app */,
+				6D567AAC2822197B009573F7 /* UltimatePortfolioTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -213,6 +246,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6D567AAB2822197B009573F7 /* UltimatePortfolioTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D567AB22822197B009573F7 /* Build configuration list for PBXNativeTarget "UltimatePortfolioTests" */;
+			buildPhases = (
+				6D567AA82822197B009573F7 /* Sources */,
+				6D567AA92822197B009573F7 /* Frameworks */,
+				6D567AAA2822197B009573F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6D567AB12822197B009573F7 /* PBXTargetDependency */,
+			);
+			name = UltimatePortfolioTests;
+			productName = UltimatePortfolioTests;
+			productReference = 6D567AAC2822197B009573F7 /* UltimatePortfolioTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		6D837E6827F523BF0003C6C1 /* UltimatePortfolio */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6D837E7727F523C20003C6C1 /* Build configuration list for PBXNativeTarget "UltimatePortfolio" */;
@@ -240,6 +291,10 @@
 				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
+					6D567AAB2822197B009573F7 = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = 6D837E6827F523BF0003C6C1;
+					};
 					6D837E6827F523BF0003C6C1 = {
 						CreatedOnToolsVersion = 13.3;
 					};
@@ -260,11 +315,19 @@
 			projectRoot = "";
 			targets = (
 				6D837E6827F523BF0003C6C1 /* UltimatePortfolio */,
+				6D567AAB2822197B009573F7 /* UltimatePortfolioTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6D567AAA2822197B009573F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6D837E6727F523BF0003C6C1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -282,6 +345,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6D567AA82822197B009573F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D567AB628221C0D009573F7 /* AssetTests.swift in Sources */,
+				6D567AAF2822197B009573F7 /* UltimatePortfolioTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6D837E6527F523BF0003C6C1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -309,6 +381,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6D567AB12822197B009573F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6D837E6827F523BF0003C6C1 /* UltimatePortfolio */;
+			targetProxy = 6D567AB02822197B009573F7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6D805A7828129C730060FE06 /* Localizable.strings */ = {
@@ -341,6 +421,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6D567AB32822197B009573F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6H2XBL875F;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.au.GranitePier-RA.UltimatePortfolioTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UltimatePortfolio.app/UltimatePortfolio";
+			};
+			name = Debug;
+		};
+		6D567AB42822197B009573F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6H2XBL875F;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.au.GranitePier-RA.UltimatePortfolioTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UltimatePortfolio.app/UltimatePortfolio";
+			};
+			name = Release;
+		};
 		6D837E7527F523C20003C6C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -520,6 +636,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6D567AB22822197B009573F7 /* Build configuration list for PBXNativeTarget "UltimatePortfolioTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D567AB32822197B009573F7 /* Debug */,
+				6D567AB42822197B009573F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6D837E6427F523BF0003C6C1 /* Build configuration list for PBXProject "UltimatePortfolio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
