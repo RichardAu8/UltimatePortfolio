@@ -14,13 +14,25 @@ import CoreData
 class DataController: ObservableObject {
     let container: NSPersistentCloudKitContainer
     
+    // Read and create a SINGLE model so that we don't have multiple everytime we instantiate DataController
+    static let model: NSManagedObjectModel = {
+        guard let url = Bundle.main.url(forResource: "Main", withExtension: "momd") else {
+            fatalError("Failed to locate core data model file.")
+        }
+        guard let managedObjectModel = NSManagedObjectModel(contentsOf: url) else {
+            fatalError("Failed to load core data model file.")
+        }
+        return managedObjectModel
+    } ()
+    
     /// Initialises a data controller either in permanent (app/cloud) storage or in memory when we only want to use it for testing
     ///
     /// Defaults to permanent storage
     ///  - Parameter inMemory: indicates whether to store data temporarily in memory
-    // For testing & preview, create an in-memory database in /dev/null that is destroyed when the app finishes running
+    /// For testing & preview, create an in-memory database in /dev/null that is destroyed when the app finishes running.
+    /// Modified to use "static model" defined above.
     init(inMemory: Bool = false){
-        container = NSPersistentCloudKitContainer(name: "Main")
+        container = NSPersistentCloudKitContainer(name: "Main", managedObjectModel: Self.model)
         
         if inMemory {
             container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")

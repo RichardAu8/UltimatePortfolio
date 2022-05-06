@@ -41,9 +41,7 @@ class AwardTests: BaseTestCase {
             
             XCTAssertEqual(matches.count, count + 1, "Adding \(value) items should unlock \(count + 1) awards.")
             
-            for item in items {
-                dataController.delete(item)
-            }
+            dataController.deleteAll()
         }
     }
     
@@ -65,9 +63,8 @@ class AwardTests: BaseTestCase {
             
             XCTAssertEqual(matches.count, count + 1, "Completing \(value) items should unlock \(count + 1) awards.")
             
-            for item in items {
-                dataController.delete(item)
-            }
+            dataController.deleteAll()
+            
         }
     }
 }

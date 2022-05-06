@@ -69,7 +69,12 @@ extension Project {
     ]
     
     static var example: Project {
-        let controller = DataController(inMemory: true)
+        // For func testExampleProjectIsClosed()
+        // we must use DataController.preview otherwise the example is lost for testing.
+        // UltimatePortfolioTests base case creates a DataController inMemory.
+        // When a .example is returned iOS releases the memory and the dataController and .example are destroyed
+        // Using .preview creates a singleton that keeps the test dataController and .example alive
+        let controller = DataController.preview
         let viewContext = controller.container.viewContext
         
         let project = Project(context: viewContext) // create a new project context from viewContext
