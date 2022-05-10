@@ -38,6 +38,7 @@
 		6DE50DF02828D34C00664B8A /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE50DEF2828D34C00664B8A /* ExtensionTests.swift */; };
 		6DE50DF32828D76300664B8A /* DecodableDictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DE50DF22828D76300664B8A /* DecodableDictionary.json */; };
 		6DE50DF52828D7ED00664B8A /* DecodableString.json in Resources */ = {isa = PBXBuildFile; fileRef = 6DE50DF42828D7ED00664B8A /* DecodableString.json */; };
+		6DE50DF72829E24B00664B8A /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE50DF62829E24B00664B8A /* PerformanceTests.swift */; };
 		6DEB02642807C7F200981BBC /* SelectSomethingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEB02632807C7F200981BBC /* SelectSomethingView.swift */; };
 		6DEB0266280A37E500981BBC /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEB0265280A37E500981BBC /* Bundle-Decodable.swift */; };
 		6DEB0268280A600400981BBC /* Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEB0267280A600400981BBC /* Award.swift */; };
@@ -94,6 +95,7 @@
 		6DE50DEF2828D34C00664B8A /* ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
 		6DE50DF22828D76300664B8A /* DecodableDictionary.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DecodableDictionary.json; sourceTree = "<group>"; };
 		6DE50DF42828D7ED00664B8A /* DecodableString.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DecodableString.json; sourceTree = "<group>"; };
+		6DE50DF62829E24B00664B8A /* PerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTests.swift; sourceTree = "<group>"; };
 		6DEB02632807C7F200981BBC /* SelectSomethingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSomethingView.swift; sourceTree = "<group>"; };
 		6DEB0265280A37E500981BBC /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		6DEB0267280A600400981BBC /* Award.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Award.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				6D567AAE2822197B009573F7 /* UltimatePortfolioTests.swift */,
 				6D567AB528221C0D009573F7 /* AssetTests.swift */,
 				6DE50DEF2828D34C00664B8A /* ExtensionTests.swift */,
+				6DE50DF62829E24B00664B8A /* PerformanceTests.swift */,
 			);
 			path = UltimatePortfolioTests;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DE50DF72829E24B00664B8A /* PerformanceTests.swift in Sources */,
 				6D567AB628221C0D009573F7 /* AssetTests.swift in Sources */,
 				6D567ABC28224ADA009573F7 /* AwardTests.swift in Sources */,
 				6D567AAF2822197B009573F7 /* UltimatePortfolioTests.swift in Sources */,
