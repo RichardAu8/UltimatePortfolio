@@ -11,23 +11,23 @@ struct ProjectHeaderView: View {
     @ObservedObject var project: Project
     
     var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                Text(project.projectTitle)
-                    .font(.headline) // added by RA
-                ProgressView(value: project.completionAmount)
-                    .accentColor(Color(project.projectColor))
-            }
-            Spacer()
-            
-            NavigationLink(destination: EditProjectView(project: project)) {
+        NavigationLink(destination: EditProjectView(project: project)) {
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(project.projectTitle)
+                        .font(.headline) // added by RA
+                    ProgressView(value: project.completionAmount)
+                        .accentColor(Color(project.projectColor))
+                }
+                Spacer()
+                
                 Image(systemName: "square.and.pencil")
                     .imageScale(.large)
             }
         }
         .accessibilityElement(children: .combine)
         .padding(.bottom, 10)
-
+        
     }
 }
 

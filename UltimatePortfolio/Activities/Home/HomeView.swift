@@ -47,6 +47,7 @@ struct HomeView: View {
                         LazyHGrid(rows: projectRows) {
                             ForEach(projects, content: ProjectSummaryView.init)
                         }
+                        .padding([.horizontal, .top])
                         .fixedSize(horizontal: false, vertical: true)
                     }
                     VStack(alignment: .leading) {
@@ -55,7 +56,7 @@ struct HomeView: View {
                     }
                     .padding(.horizontal)
                 }
-                .padding([.horizontal, .top])
+                
             }
             .background(Color.systemGroupedBackground.ignoresSafeArea())
             .navigationTitle("Home")

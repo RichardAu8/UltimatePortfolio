@@ -41,11 +41,23 @@ struct ProjectsView: View {
                         .foregroundColor(.secondary)
                 } else {
                     projectsList
-                } // else
+                }
             } // Group
-            // condition added for iPhone Max landscape
-            SelectSomethingView()
+            .navigationTitle(showClosedProjects ? "Closed Projects" : "Open Projects")
+            .toolbar {
+                addProjectToolbarItem
+                sortOrderToolbarItem
+            }
+            .actionSheet(isPresented: $showingSortOrder) {
+                ActionSheet(title: Text("Sort Items"), message: nil, buttons: [
+                    .default(Text("Optimized")) {sortOrder = .optimized },
+                    .default(Text("Creation Date")) {sortOrder = .creationDate },
+                    .default(Text("Title")) {sortOrder = .title }
+                ])
+            }
+            SelectSomethingView()  // condition added for iPhone Max landscape
         } //NavigationView
+
     } // Body
     
     var projectsList: some View {
@@ -64,25 +76,13 @@ struct ProjectsView: View {
                         Button {
                             addItem(to: project)
                         } label: {
-                            Label("Add New Item", systemImage: "plus")
+                            Label("Add Item", systemImage: "plus")
                         }
                     }
                 }
             }
         }
         .listStyle(InsetGroupedListStyle())
-        .navigationTitle(showClosedProjects ? "Closed Projects" : "Open Projects")
-        .toolbar {
-            addProjectToolbarItem
-            sortOrderToolbarItem
-        }
-        .actionSheet(isPresented: $showingSortOrder) {
-            ActionSheet(title: Text("Sort Items"), message: nil, buttons: [
-                .default(Text("Optimized")) {sortOrder = .optimized },
-                .default(Text("Creation Date")) {sortOrder = .creationDate },
-                .default(Text("Title")) {sortOrder = .title }
-            ])
-        }
     }
     
     var addProjectToolbarItem: some ToolbarContent {
@@ -110,6 +110,15 @@ struct ProjectsView: View {
             }
         }
     }
+
+    func addProject() {
+        withAnimation {
+            let project = Project(context: managedObjectContext)
+            project.closed = false
+            project.creationDate = Date()
+            dataController.save()
+        }
+    }
     
     func addItem(to project: Project) {
         withAnimation {
@@ -127,15 +136,6 @@ struct ProjectsView: View {
             dataController.delete(item)
         }
         dataController.save()
-    }
-    
-    func addProject() {
-        withAnimation {
-            let project = Project(context: managedObjectContext)
-            project.closed = false
-            project.creationDate = Date()
-            dataController.save()
-        }
     }
     
 } // ProjectsView

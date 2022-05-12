@@ -13,7 +13,7 @@ struct AwardsView: View {
     @State private var selectedAward = Award.example
     @State private var showingAwardDetails = false
     
-    static let tag: String? = "Awards"
+    static let tag: String = "Awards"
     
     var columns: [GridItem] {
         [GridItem(.adaptive(minimum: 100, maximum: 100))]
@@ -60,13 +60,13 @@ struct AwardsView: View {
             return Alert(
                 title: Text("Unlocked: \(selectedAward.name)"),
                 message: Text(selectedAward.description),
-                dismissButton: .default(Text("Ok"))
+                dismissButton: .default(Text("OK"))
             )
         } else {
             return Alert(
                 title: Text("Locked"),
                 message: Text(selectedAward.description),
-                dismissButton: .default(Text("Ok"))
+                dismissButton: .default(Text("OK"))
             )
         }
 
