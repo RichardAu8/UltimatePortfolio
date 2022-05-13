@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EditProjectView: View {
-    let project: Project
+    @ObservedObject var project: Project
     
     @EnvironmentObject var dataController: DataController
     
@@ -43,7 +43,7 @@ struct EditProjectView: View {
                 .padding(.vertical)
             }
             // swiftlint:disable: next line_length
-            Section(footer: Text("Closing a project moves it from the Open to Closed tab; deleting it removes the project completely.")) {
+            Section(footer: Text("Closing a project moves it from the Open to Closed tab; deleting it removes the project entirely.")) {
                 Button(project.closed ? "Reopen this project" : "Close this project") {
                     project.closed.toggle()
                     update()
